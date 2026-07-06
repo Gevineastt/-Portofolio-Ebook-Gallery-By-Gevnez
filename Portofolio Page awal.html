@@ -1,0 +1,348 @@
+<!DOCTYPE html><html class="light" lang="id" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>INFORMATICS.UI | Portfolio</title>
+<!-- Google Fonts: Space Mono for Headings, Work Sans for Body -->
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&amp;family=Work+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary": "#ffffff",
+                    "surface-tint": "#a93712",
+                    "secondary-fixed": "#d5e3ff",
+                    "primary-container": "#c74d27",
+                    "on-primary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "background": "#fcf9f8",
+                    "primary-fixed-dim": "#ffb59f",
+                    "on-error": "#ffffff",
+                    "tertiary-container": "#caa800",
+                    "surface-bright": "#fcf9f8",
+                    "on-tertiary": "#ffffff",
+                    "on-background": "#1c1b1b",
+                    "primary": "#a6350f",
+                    "on-primary-fixed-variant": "#862200",
+                    "on-primary-container": "#fffbff",
+                    "secondary": "#465f86",
+                    "surface-container-highest": "#e5e2e1",
+                    "outline-variant": "#e0bfb7",
+                    "on-surface": "#1c1b1b",
+                    "surface-container-high": "#eae7e7",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-fixed": "#ffdbd1",
+                    "outline": "#8c716a",
+                    "secondary-fixed-dim": "#aec8f4",
+                    "on-tertiary-fixed-variant": "#554500",
+                    "error-container": "#ffdad6",
+                    "surface-container": "#f0edec",
+                    "on-secondary-container": "#3f5980",
+                    "inverse-on-surface": "#f3f0ef",
+                    "on-tertiary-container": "#4c3e00",
+                    "on-primary-fixed": "#3b0a00",
+                    "secondary-container": "#b6d0fd",
+                    "on-secondary-fixed": "#001c3b",
+                    "surface-dim": "#dcd9d9",
+                    "surface-container-low": "#f6f3f2",
+                    "on-secondary-fixed-variant": "#2d476d",
+                    "tertiary-fixed-dim": "#e8c426",
+                    "surface-variant": "#e5e2e1",
+                    "tertiary-fixed": "#ffe173",
+                    "on-tertiary-fixed": "#221b00",
+                    "tertiary": "#705d00",
+                    "surface": "#fcf9f8",
+                    "on-surface-variant": "#58413b",
+                    "inverse-surface": "#313030",
+                    "error": "#ba1a1a",
+                    "inverse-primary": "#ffb59f",
+                    "brand-coral": "#E8643C",
+                    "brand-navy": "#1F3A5F",
+                    "brand-yellow": "#FFD93D",
+                    "brand-offwhite": "#F4F1EA"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0px",
+                    "lg": "0px",
+                    "xl": "0px",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "base": "4px",
+                    "shadow-offset": "6px",
+                    "unit-8": "32px",
+                    "unit-12": "48px",
+                    "layout-gutter": "24px",
+                    "unit-2": "8px",
+                    "layout-margin": "24px",
+                    "border-width": "3px",
+                    "unit-6": "24px",
+                    "unit-4": "16px",
+                    "unit-1": "4px"
+            },
+            "fontFamily": {
+                    "label-md": ["Space Mono"],
+                    "headline-xl": ["Space Mono"],
+                    "body-lg": ["Work Sans"],
+                    "headline-lg": ["Space Mono"],
+                    "headline-lg-mobile": ["Space Mono"],
+                    "body-md": ["Work Sans"],
+                    "headline-md": ["Space Mono"],
+                    "label-sm": ["Space Mono"]
+            },
+            "fontSize": {
+                    "label-md": ["14px", {"lineHeight": "1", "fontWeight": "700"}],
+                    "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                    "label-sm": ["12px", {"lineHeight": "1", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      body {
+        background-color: #F4F1EA;
+        color: #1c1b1b;
+      }
+      .brutalist-border {
+        border: 3px solid #1c1b1b;
+      }
+      .brutalist-shadow {
+        box-shadow: 6px 6px 0px 0px #1c1b1b;
+        transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.2s ease-in-out;
+      }
+      .brutalist-shadow-hover:hover {
+        transform: translate(-4px, -4px);
+        box-shadow: 10px 10px 0px 0px #1c1b1b;
+      }
+      .brutalist-shadow-hover:active {
+        transform: translate(4px, 4px);
+        box-shadow: 2px 2px 0px 0px #1c1b1b;
+      }
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+
+      /* Floating Headers Animation */
+      @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-8px); }
+      }
+      .floating-header {
+        display: inline-block;
+        animation: float 4s ease-in-out infinite;
+      }
+
+      /* 3D Container */
+      .tilt-card {
+        transform-style: preserve-3d;
+        perspective: 1000px;
+      }
+
+      /* Ticker / Marquee Animations */
+      @keyframes ticker-scroll {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+      }
+
+      .ticker-container {
+        overflow: hidden;
+        width: 100%;
+        position: relative;
+      }
+
+      .ticker-track {
+        display: flex;
+        width: max-content;
+        animation: ticker-scroll var(--speed, 30s) linear infinite;
+      }
+      
+      .ticker-track:hover {
+        animation-play-state: paused;
+      }
+
+      /* Specific track adjustments */
+      .track-pendidikan { --speed: 25s; }
+      .track-keahlian { --speed: 40s; }
+      .track-karya { --speed: 35s; }
+
+      /* Floating Dots Canvas Styles */
+      #dots-canvas {
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+
+    
+<!-- Footer -->
+<footer class="w-full brutalist-border border-b-0 border-l-0 border-r-0 px-layout-margin py-unit-6 mt-unit-6 bg-brand-navy" id="kontak"><div class="container mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-unit-6"><div class="space-y-unit-2"><div class="font-headline-md text-headline-md text-white uppercase">INFORMATICS.UI</div><p class="font-body-md text-body-md max-w-sm text-white">Mari berdiskusi tentang proyek hebat selanjutnya.</p><a class="inline-block font-headline-md text-headline-md text-white hover:underline underline-offset-4 brutalist-shadow-hover p-1" href="mailto:halo@aditama.id">halo@aditama.id</a></div><div class="flex flex-col gap-unit-2"><p class="font-label-md text-label-md uppercase border-b-2 border-white text-white">Ikuti Saya</p><div class="flex gap-unit-4"><a class="text-white/80 hover:text-white transition-colors font-label-md text-label-md" href="#">LinkedIn</a><a class="text-white/80 hover:text-white transition-colors font-label-md text-label-md" href="#">GitHub</a><a class="text-white/80 hover:text-white transition-colors font-label-md text-label-md" href="#">Dribbble</a></div></div></div><div class="container mx-auto mt-unit-6 pt-unit-4 border-t border-white/20 flex flex-col md:flex-row justify-between items-center gap-unit-2 text-white/60"><span class="font-label-sm text-label-sm">© 2024 Informatics Student. Built with Code &amp; Grit.</span><div class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-green-500 animate-pulse"></span><span class="font-label-sm text-label-sm uppercase">Tersedia untuk proyek baru</span></div></div></footer>
+<script>
+    // Mobile Menu Logic
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    let isMenuOpen = false;
+
+    mobileMenuBtn.addEventListener('click', () => {
+        isMenuOpen = !isMenuOpen;
+        if (isMenuOpen) {
+            mobileMenu.classList.remove('hidden');
+            mobileMenuBtn.innerHTML = '<span class="material-symbols-outlined">close</span>';
+            document.body.style.overflow = 'hidden';
+        } else {
+            mobileMenu.classList.add('hidden');
+            mobileMenuBtn.innerHTML = '<span class="material-symbols-outlined">menu</span>';
+            document.body.style.overflow = 'auto';
+        }
+    });
+
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            mobileMenuBtn.innerHTML = '<span class="material-symbols-outlined">menu</span>';
+            document.body.style.overflow = 'auto';
+            isMenuOpen = false;
+        });
+    });
+
+    // 3D Tilt Effect Logic
+    const tiltCards = document.querySelectorAll('.tilt-card');
+    
+    tiltCards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            
+            const rotateX = ((y - centerY) / centerY) * -15; // Max 15 degrees
+            const rotateY = ((x - centerX) / centerX) * 15;
+            
+            // Adjust shadow offset based on tilt
+            const shadowX = 6 + (rotateY / 2);
+            const shadowY = 6 - (rotateX / 2);
+
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+            card.style.boxShadow = `${shadowX}px ${shadowY}px 0px 0px #1c1b1b`;
+            card.style.zIndex = "10";
+        });
+
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+            card.style.boxShadow = `6px 6px 0px 0px #1c1b1b`;
+            card.style.zIndex = "1";
+        });
+    });
+
+    // Floating Dots Canvas Logic
+    const canvas = document.getElementById('dots-canvas');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+    const particleCount = 60;
+    const colors = ['#e8643c', '#465f86', '#1c1b1b', '#8c716a'];
+    let mouse = { x: null, y: null, radius: 150 };
+
+    function init() {
+      resize();
+      createParticles();
+      animate();
+    }
+
+    function resize() {
+      canvas.width = canvas.parentElement.offsetWidth;
+      canvas.height = canvas.parentElement.offsetHeight;
+    }
+
+    class Particle {
+      constructor() {
+        this.init();
+      }
+      init() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 2 + 1;
+        this.speedX = (Math.random() - 0.5) * 0.5;
+        this.speedY = (Math.random() - 0.5) * 0.5;
+        this.color = colors[Math.floor(Math.random() * colors.length)];
+        this.originalX = this.x;
+        this.originalY = this.y;
+      }
+      update() {
+        // Move slowly
+        this.x += this.speedX;
+        this.y += this.speedY;
+
+        // Wrap around boundaries
+        if (this.x > canvas.width) this.x = 0;
+        if (this.x < 0) this.x = canvas.width;
+        if (this.y > canvas.height) this.y = 0;
+        if (this.y < 0) this.y = canvas.height;
+
+        // Mouse interaction
+        if (mouse.x !== null && mouse.y !== null) {
+          let dx = mouse.x - this.x;
+          let dy = mouse.y - this.y;
+          let distance = Math.sqrt(dx * dx + dy * dy);
+          if (distance < mouse.radius) {
+            const force = (mouse.radius - distance) / mouse.radius;
+            const directionX = dx / distance;
+            const directionY = dy / distance;
+            this.x -= directionX * force * 2;
+            this.y -= directionY * force * 2;
+          }
+        }
+      }
+      draw() {
+        ctx.fillStyle = this.color;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+
+    function createParticles() {
+      particles = [];
+      for (let i = 0; i < particleCount; i++) {
+        particles.push(new Particle());
+      }
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let i = 0; i < particles.length; i++) {
+        particles[i].update();
+        particles[i].draw();
+      }
+      requestAnimationFrame(animate);
+    }
+
+    window.addEventListener('resize', () => {
+      resize();
+      createParticles();
+    });
+
+    canvas.parentElement.addEventListener('mousemove', (e) => {
+      const rect = canvas.getBoundingClientRect();
+      mouse.x = e.clientX - rect.left;
+      mouse.y = e.clientY - rect.top;
+    });
+
+    canvas.parentElement.addEventListener('mouseleave', () => {
+      mouse.x = null;
+      mouse.y = null;
+    });
+
+    init();
+</script>
+</body>
+</html>

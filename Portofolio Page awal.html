@@ -182,12 +182,52 @@
         display: block;
       }
 
+      /* Running Border Effect */
+      @keyframes rotate-border {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+
+      .running-border-wrapper {
+        position: relative;
+        padding: 4px; /* Space for the border line */
+        overflow: hidden;
+        display: inline-flex;
+        background: #1c1b1b; /* Matches main border color */
+      }
+
+      .running-border-line {
+        position: absolute;
+        width: 150%;
+        height: 150%;
+        top: -25%;
+        left: -25%;
+        background: conic-gradient(
+          transparent, 
+          transparent 20%, 
+          #FFD93D 40%, /* brand-yellow */
+          #E8643C 50%, /* brand-coral */
+          #FFD93D 60%, 
+          transparent 80%, 
+          transparent
+        );
+        animation: rotate-border 4s linear infinite;
+        z-index: 0;
+      }
+
+      .running-border-content {
+        position: relative;
+        z-index: 10;
+        width: 100%;
+        height: 100%;
+      }
+
     </style>
 </head>
-<body class="font-body-md text-body-md overflow-x-hidden relative" style="overflow: auto;" data-mode="connect">
+<body class="font-body-md text-body-md overflow-x-hidden relative" data-mode="connect" style="overflow: auto;">
 <!-- Section 1: TopNavBar -->
 <nav class="sticky top-0 z-50 flex justify-between items-center px-layout-margin py-unit-2 bg-surface brutalist-border border-t-0 border-l-0 border-r-0 shadow-[0px_3px_0px_0px_rgba(28,27,27,1)]">
-<div class="flex items-center"><div class="w-12 h-12 flex items-center justify-center overflow-hidden rounded-full brutalist-border"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDADZo5sTXBB3OhWMAIalgDEaPfj9XufU-Qy7RtsVHMYyGhh8J4UI4erRGBzfSwW-54dvDDEfMKQBP6bu8TI3tkVdXxzrvLehMhPZpmaX95f7Ld0CVUOkEHQTSqcQpYb0d1JXNvu5he1sm56RiF7KWTAVpMJnAnfkKOFZGOIyXfb1wDTy7zj4bQBJTm2QsznbH92TWZdjsu98vKJQbwkpOtMVD-hyNxQXimbLvxAH6XtcBn_P17ZruxRqF3PP6tJD_WMBm2iJO192E" alt="INFORMATICS.UI Logo" class="h-full w-full object-cover rounded-full"></div></div>
+<div class="flex items-center"><div class="w-12 h-12 flex items-center justify-center overflow-hidden rounded-full brutalist-border"><img alt="INFORMATICS.UI Logo" class="h-full w-full object-cover rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDADZo5sTXBB3OhWMAIalgDEaPfj9XufU-Qy7RtsVHMYyGhh8J4UI4erRGBzfSwW-54dvDDEfMKQBP6bu8TI3tkVdXxzrvLehMhPZpmaX95f7Ld0CVUOkEHQTSqcQpYb0d1JXNvu5he1sm56RiF7KWTAVpMJnAnfkKOFZGOIyXfb1wDTy7zj4bQBJTm2QsznbH92TWZdjsu98vKJQbwkpOtMVD-hyNxQXimbLvxAH6XtcBn_P17ZruxRqF3PP6tJD_WMBm2iJO192E"></div></div>
 <!-- Desktop Nav -->
 <div class="hidden md:flex items-center gap-unit-6">
 <a class="font-label-md text-label-md text-on-surface hover:text-primary transition-all" href="#about">about</a>
@@ -224,18 +264,21 @@
 </div>
 <div class="md:col-span-7 flex flex-col items-start gap-unit-4">
 <div class="bg-brand-yellow brutalist-border px-unit-4 py-unit-1 font-label-md text-label-md">
-                informatics student &amp; ui/ux enthusiast
+                Informatics Student &amp; e-novel desinger & writer
             </div>
 <h1 class="font-headline-xl text-headline-xl md:text-[64px] leading-none">
                 halo, saya <span class="text-brand-coral">Gerardus Malvin</span>
 </h1>
 <p class="font-body-lg text-body-lg max-w-xl">
-                Seorang mahasiswa Teknik Informatika yang jatuh cinta dengan seni membangun antarmuka pengguna yang fungsional namun berani. Fokus pada pengembangan front-end dan desain yang berpusat pada manusia.
+                Saya adalah seorang mahasiswa Informatika yang memiliki ketertarikan dalam dunia desain dan penulisan e-novel. Dengan kombinasi keterampilan teknis dan kreativitas, saya berusaha menciptakan karya-karya yang tidak hanya fungsional tetapi juga estetis dan memiliki filosofi masing-masing dari akar kehidupan.
             </p>
-<button class="group bg-brand-coral brutalist-border brutalist-shadow px-unit-8 py-unit-4 font-headline-md text-headline-md text-white brutalist-shadow-hover transition-all flex items-center gap-unit-2">
-                lihat karya saya
-                <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
-</button>
+<!-- Updated Button with Running Border -->
+<div class="running-border-wrapper brutalist-shadow brutalist-shadow-hover">
+<div class="running-border-line"></div>
+<div class="running-border-content">
+<button class="group bg-brand-coral brutalist-border px-unit-8 py-unit-4 font-headline-md text-headline-md text-white transition-all flex items-center gap-unit-2">lihat karya E-novel <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span></button>
+</div>
+</div>
 </div>
 </section>
 <!-- Section 3: Tentang Saya -->
@@ -244,7 +287,7 @@
 <div class="flex-1 space-y-unit-2">
 <h2 class="font-headline-lg text-headline-lg text-white">tentang saya</h2>
 <p class="font-body-lg text-body-lg text-white leading-relaxed">
-                    Saya percaya bahwa teknologi tidak harus membosankan. Melalui latar belakang Informatika, saya menggabungkan logika pemrograman yang kuat dengan estetika desain yang tajam. Saat ini saya sedang mendalami bagaimana menciptakan sistem desain yang efisien dan aksesibel bagi semua orang.
+                    Saya percaya bahwa teknologi tidak harus membosankan. Melalui latar belakang Informatika, saya menggabungkan logika pemrograman yang kuat dengan estetika desain yang tajam. Saat ini saya sedang mendalami bagaimana menciptakan sistem desain yang efisien dan aksesibel bagi semua orang juga ingin memperkuat daya tarik akan membaca suatu kisah yang menarik dari sumber akar kehidupan yang selalu memiliki makna dan inspirasi yang dituangkan ke dalam tulisan.
                 </p>
 </div>
 <div class="w-full md:w-1/3 flex justify-center">
@@ -350,7 +393,7 @@
 <span class="font-label-md text-label-md uppercase">Git / GitHub</span>
 <span class="material-symbols-outlined text-6xl opacity-40 self-end">account_tree</span>
 </div>
-<div class="grid grid-cols-2 gap-unit-6 w-[600px]"><a href="#skill-communication" class="bg-brand-offwhite text-on-background brutalist-border brutalist-shadow p-unit-4 flex flex-col justify-between brutalist-shadow-hover tilt-card transition-colors hover:bg-white"><span class="font-headline-md text-headline-md uppercase">Good Communication</span><span class="material-symbols-outlined text-4xl opacity-40">chat</span></a><a href="#skill-teamwork" class="bg-brand-yellow text-on-background brutalist-border brutalist-shadow p-unit-4 flex flex-col justify-between brutalist-shadow-hover tilt-card transition-colors hover:bg-tertiary-fixed"><span class="font-headline-md text-headline-md uppercase">Team Working</span><span class="material-symbols-outlined text-4xl opacity-40">groups</span></a><a href="#skill-critical" class="bg-brand-coral text-white brutalist-border brutalist-shadow p-unit-4 flex flex-col justify-between brutalist-shadow-hover tilt-card transition-colors hover:bg-primary"><span class="font-headline-md text-headline-md uppercase">Critical Thinking</span><span class="material-symbols-outlined text-4xl opacity-40">psychology</span></a><a href="#skill-problem" class="bg-brand-offwhite text-on-background brutalist-border brutalist-shadow p-unit-4 flex flex-col justify-between brutalist-shadow-hover tilt-card transition-colors hover:bg-white"><span class="font-headline-md text-headline-md uppercase">Problem Solving</span><span class="material-symbols-outlined text-4xl opacity-40">build</span></a><a href="#skill-content" class="bg-brand-yellow text-on-background brutalist-border brutalist-shadow p-unit-4 flex flex-col justify-between brutalist-shadow-hover tilt-card transition-colors hover:bg-tertiary-fixed"><span class="font-headline-md text-headline-md uppercase">Content Writer</span><span class="material-symbols-outlined text-4xl opacity-40">edit_note</span></a><a href="#skill-book" class="bg-brand-coral text-white brutalist-border brutalist-shadow p-unit-4 flex flex-col justify-between brutalist-shadow-hover tilt-card transition-colors hover:bg-primary"><span class="font-headline-md text-headline-md uppercase">Book Writer</span><span class="material-symbols-outlined text-4xl opacity-40">menu_book</span></a></div></div>
+<div class="grid grid-cols-2 gap-unit-6 w-[600px]"><a class="bg-brand-offwhite text-on-background brutalist-border brutalist-shadow p-unit-4 flex flex-col justify-between brutalist-shadow-hover tilt-card transition-colors hover:bg-white" href="#skill-communication" style="transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1); box-shadow: rgb(28, 27, 27) 6px 6px 0px 0px; z-index: 1;"><span class="font-headline-md text-headline-md uppercase">Good Communication</span><span class="material-symbols-outlined text-4xl opacity-40">chat</span></a><a class="bg-brand-yellow text-on-background brutalist-border brutalist-shadow p-unit-4 flex flex-col justify-between brutalist-shadow-hover tilt-card transition-colors hover:bg-tertiary-fixed" href="#skill-teamwork" style="transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1); box-shadow: rgb(28, 27, 27) 6px 6px 0px 0px; z-index: 1;"><span class="font-headline-md text-headline-md uppercase">Team Working</span><span class="material-symbols-outlined text-4xl opacity-40">groups</span></a><a class="bg-brand-coral text-white brutalist-border brutalist-shadow p-unit-4 flex flex-col justify-between brutalist-shadow-hover tilt-card transition-colors hover:bg-primary" href="#skill-critical" style="transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1); box-shadow: rgb(28, 27, 27) 6px 6px 0px 0px; z-index: 1;"><span class="font-headline-md text-headline-md uppercase">Critical Thinking</span><span class="material-symbols-outlined text-4xl opacity-40">psychology</span></a><a class="bg-brand-offwhite text-on-background brutalist-border brutalist-shadow p-unit-4 flex flex-col justify-between brutalist-shadow-hover tilt-card transition-colors hover:bg-white" href="#skill-problem" style="transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1); box-shadow: rgb(28, 27, 27) 6px 6px 0px 0px; z-index: 1;"><span class="font-headline-md text-headline-md uppercase">Problem Solving</span><span class="material-symbols-outlined text-4xl opacity-40">build</span></a><a class="bg-brand-yellow text-on-background brutalist-border brutalist-shadow p-unit-4 flex flex-col justify-between brutalist-shadow-hover tilt-card transition-colors hover:bg-tertiary-fixed" href="#skill-content" style="transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1); box-shadow: rgb(28, 27, 27) 6px 6px 0px 0px; z-index: 1;"><span class="font-headline-md text-headline-md uppercase">Content Writer</span><span class="material-symbols-outlined text-4xl opacity-40">edit_note</span></a><a class="bg-brand-coral text-white brutalist-border brutalist-shadow p-unit-4 flex flex-col justify-between brutalist-shadow-hover tilt-card transition-colors hover:bg-primary" href="#skill-book" style="transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1); box-shadow: rgb(28, 27, 27) 6px 6px 0px 0px; z-index: 1;"><span class="font-headline-md text-headline-md uppercase">Book Writer</span><span class="material-symbols-outlined text-4xl opacity-40">menu_book</span></a></div></div>
 <!-- Set 2 (Duplicate for loop) -->
 <div class="flex gap-unit-6 h-[480px]">
 <div class="grid grid-cols-2 grid-rows-2 gap-unit-6 w-[600px]">
@@ -362,12 +405,12 @@
 <span class="font-headline-md text-headline-md uppercase">Python</span>
 <span class="material-symbols-outlined text-4xl opacity-40">terminal</span>
 </div>
-<div class="bg-brand-yellow text-on-background brutalist-border brutalist-shadow p-unit-4 flex flex-col justify-between brutalist-shadow-hover tilt-card">
+<div class="bg-brand-yellow text-on-background brutalist-border brutalist-shadow p-unit-4 flex flex-col justify-between brutalist-shadow-hover tilt-card" style="transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1); box-shadow: rgb(28, 27, 27) 6px 6px 0px 0px; z-index: 1;">
 <span class="font-headline-md text-headline-md uppercase">Figma</span>
 <span class="material-symbols-outlined text-4xl opacity-40">draw</span>
 </div>
 </div>
-<div class="w-[400px] bg-brand-navy text-white brutalist-border brutalist-shadow p-unit-6 flex flex-col items-center justify-center text-center gap-unit-4 brutalist-shadow-hover tilt-card">
+<div class="w-[400px] bg-brand-navy text-white brutalist-border brutalist-shadow p-unit-6 flex flex-col items-center justify-center text-center gap-unit-4 brutalist-shadow-hover tilt-card" style="transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1); box-shadow: rgb(28, 27, 27) 6px 6px 0px 0px; z-index: 1;">
 <span class="material-symbols-outlined text-[100px] opacity-40">brush</span>
 <span class="font-headline-xl text-headline-xl uppercase leading-none">UI/UX Design</span>
 </div>
@@ -558,8 +601,10 @@ View Case Study <span class="material-symbols-outlined text-sm">open_in_new</spa
     }
 
     function resize() {
-      canvas.width = canvas.parentElement.offsetWidth;
-      canvas.height = canvas.parentElement.offsetHeight;
+      if (canvas.parentElement) {
+        canvas.width = canvas.parentElement.offsetWidth;
+        canvas.height = canvas.parentElement.offsetHeight;
+      }
     }
 
     class Particle {
@@ -630,17 +675,21 @@ View Case Study <span class="material-symbols-outlined text-sm">open_in_new</spa
       createParticles();
     });
 
-    canvas.parentElement.addEventListener('mousemove', (e) => {
-      const rect = canvas.getBoundingClientRect();
-      mouse.x = e.clientX - rect.left;
-      mouse.y = e.clientY - rect.top;
-    });
+    if (canvas.parentElement) {
+        canvas.parentElement.addEventListener('mousemove', (e) => {
+          const rect = canvas.getBoundingClientRect();
+          mouse.x = e.clientX - rect.left;
+          mouse.y = e.clientY - rect.top;
+        });
 
-    canvas.parentElement.addEventListener('mouseleave', () => {
-      mouse.x = null;
-      mouse.y = null;
-    });
+        canvas.parentElement.addEventListener('mouseleave', () => {
+          mouse.x = null;
+          mouse.y = null;
+        });
+    }
 
     init();
 </script>
+
+
 </body></html>

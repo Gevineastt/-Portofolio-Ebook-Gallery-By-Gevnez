@@ -1,15 +1,18 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { AuthProvider } from './context/AuthContext';
 import Portofolio from './Pages/Portofolio';
-import Gallery from './Pages/Gallery';
+import Gallery from './Pages/GalleryUpdated';
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Gallery />} />
-        <Route path="/portfolio" element={<Portofolio />} />
-      </Routes>
-    </BrowserRouter>
+    <AuthProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Portofolio />} />
+          <Route path="/gallery" element={<Gallery />} />
+        </Routes>
+      </BrowserRouter>
+    </AuthProvider>
   );
 }
 

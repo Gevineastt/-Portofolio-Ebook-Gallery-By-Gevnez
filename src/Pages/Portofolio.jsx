@@ -204,7 +204,6 @@ export default function Portfolio() {
             <a className="text-on-surface font-label text-sm hover:bg-primary-container hover:text-on-primary-container transition-all px-2 py-1" href="#pendidikan">PENDIDIKAN</a>
             <a className="text-on-surface font-label text-sm hover:bg-primary-container hover:text-on-primary-container transition-all px-2 py-1" href="#keahlian">KEAHLIAN</a>
             <a className="text-on-surface font-label text-sm hover:bg-primary-container hover:text-on-primary-container transition-all px-2 py-1" href="#karya">KARYA</a>
-            <Link className="text-on-surface font-label text-sm hover:bg-primary-container hover:text-on-primary-container transition-all px-2 py-1" to="/">📚 GALLERY</Link>
             <button
               onClick={() => setShowResumeModal(true)}
               className="bg-primary text-white brutal-border px-6 py-2 font-label text-sm hard-shadow-sm active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all"
@@ -225,7 +224,6 @@ export default function Portfolio() {
         <a className="font-headline-lg text-headline-lg-mobile text-on-surface" href="#pendidikan">PENDIDIKAN</a>
         <a className="font-headline-lg text-headline-lg-mobile text-on-surface" href="#keahlian">KEAHLIAN</a>
         <a className="font-headline-lg text-headline-lg-mobile text-on-surface" href="#karya">KARYA</a>
-        <Link className="font-headline-lg text-headline-lg-mobile text-primary font-bold text-center" to="/">📚 GALLERY</Link>
         <button
           onClick={() => setShowResumeModal(true)}
           className="bg-brand-coral brutalist-border brutalist-shadow px-unit-8 py-unit-4 font-headline-md text-headline-md text-white brutalist-shadow-hover"

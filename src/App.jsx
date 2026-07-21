@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import Portofolio from './Pages/Portofolio';
-import Gallery from './Pages/GalleryUpdated';
+import Gallery from './Pages/Gallery';
 
 function App() {
   return (
